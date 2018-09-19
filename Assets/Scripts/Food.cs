@@ -10,21 +10,36 @@ public class Food : Usable
 
     public override void Use()
     {
-
+        if (uses < maxUses)
+        {
+            Debug.Log(UseText());
+            uses++;
+        }
+        else
+        {
+            NoUsesRemainingText();
+        }
     }
 
-    /*public override void UseText()
+    public override string UseText()
     {
-
-    }*/
+        return "Consumed " + displayName + ". " + YummyToString();
+    }
 
     public override string ToString()
     {
         return base.ToString();
     }
 
-    /*public string YummyToString()
+    public string YummyToString()
     {
-
-    }*/
+        if (isYummy)
+        {
+            return "Food is yummy!";
+        }
+        else
+        {
+            return "Food isn't yummy!";
+        }
+    }
 }

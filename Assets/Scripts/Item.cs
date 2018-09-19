@@ -12,10 +12,16 @@ public class Item : MonoBehaviour
     public float GetCostPerKilo()
     {
         return cost / weight;
+
     }
 
     public override string ToString()
     {
-        return "Item Name: " + displayName + "\nCost: " + cost.ToString() + "\nWeight: " + weight.ToString() + "\nCost Per Kilo: " + GetCostPerKilo().ToString();
+        return "Item Name: " + displayName + " Cost: " + cost.ToString() + " Weight: " + weight.ToString() + " Cost Per Kilo: " + GetCostPerKilo().ToString();
+    }
+
+    public virtual void OnMouseEnter()
+    {
+        Debug.Log(ToString());
     }
 }
