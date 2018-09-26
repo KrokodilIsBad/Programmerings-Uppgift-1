@@ -12,7 +12,6 @@ public class Item : MonoBehaviour
     public float GetCostPerKilo()
     {
         return cost / weight;
-
     }
 
     public override string ToString()
